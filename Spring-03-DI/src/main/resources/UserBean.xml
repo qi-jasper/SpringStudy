@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+<!--    扩展方式注入 -->
+
+    <!--使用p命名空间注入，可以直接注入属性的值：property-->
+    <bean id="user" class="study.qi.User" p:age="18" p:name="qi"/>
+
+    <!--使用c命名空间注入，对有参构造器注入：construct-args-->
+    <bean id="user2" class="study.qi.User" c:name="wei" c:age="18" />
+
+    <!--显示地添加 scope="singleton" 表示作用域为单例模式，Spring默认就是单例模式
+        singleton：单例模式：只会创建一个对象
+        prototype：原型模式：每次从容器中get时都会产生一个新的对象
+    -->
+    <!--<bean id="user2" class="study.qi.User" c:name="wei" c:age="18" scope="singleton"/>-->
+
+
+</beans>

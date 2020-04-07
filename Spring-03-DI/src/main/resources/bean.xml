@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="address" class="study.qi.Address">
+        <property name="address" value="Beijing"/>
+    </bean>
+
+    <bean id="student" class="study.qi.Student">
+
+        <!-- 普通值的注入，使用name value即可-->
+        <property name="name" value="qi"/>
+
+        <!--bean注入，ref引用上方id="address"的bean中的属性值-->
+        <property name="address" ref="address"/>
+
+        <!--数组，ref-->
+        <property name="books">
+            <array>
+                <value>红楼梦</value>
+                <value>西游记</value>
+                <value>水浒传</value>
+                <value>三国演义</value>
+            </array>
+        </property>
+
+        <!--List-->
+        <property name="hobbys">
+            <list>
+                <value>听歌</value>
+                <value>读书</value>
+                <value>写代码</value>
+            </list>
+        </property>
+
+        <!--Map-->
+        <property name="card">
+            <map>
+                <entry key="个人ID" value="123456"/>
+            </map>
+        </property>
+
+        <!--Set-->
+        <property name="game">
+            <set>
+                <value>LOL</value>
+            </set>
+        </property>
+
+        <!--Null-->
+        <!--空字符串-->
+        <!--<property name="wifi" value=""/>-->
+        <!--设置为null-->
+        <property name="wife">
+            <null/>
+        </property>
+
+        <!--Properties
+            key=value
+            key=value
+        -->
+        <property name="info">
+            <props>
+                <prop key="学号">2016211962</prop>
+                <prop key="性别">男</prop>
+                <prop key="专业">计算机</prop>
+            </props>
+        </property>
+
+
+    </bean>
+
+
+</beans>

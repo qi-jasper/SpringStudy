@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- services -->
+    <!--
+    由Spring的bena来创建对象
+    类型 变量名 = new 类型();
+    Hello hello = new Hello();
+    id = 变量名，class = new的对象   property 相当于给对象的属性设置一个值
+    -->
+
+    <!--id是bean的唯一标识，就相当于我们new的对象名
+        class：bean对象所对应的全限定名
+        name：也可以设置别名，而且可以同时设置多个别名
+    -->
+
+    <bean id="user" class="study.qi.pojo.User">
+        <!--        <property name="name" value="qi"/>-->
+        <!--对构造器进行初始化-->
+        <!--        1. 下标赋值-->
+        <!--        <constructor-arg index="0" value="qi"/>-->
+        <!--        2. 用类型赋值（不建议使用）-->
+        <!--        <constructor-arg type="java.lang.String" value="qi"/>-->
+        <!--        3. 直接通过参数名来赋值-->
+        <constructor-arg name="name" value="qi"/>
+    </bean>
+
+    <!--给上面bean中id为user的属性设置别名-->
+    <alias name="user" alias="userhaha"/>
+
+    <bean id="usert" class="study.qi.pojo.UserT">
+        <constructor-arg name="name" value="king"/>
+    </bean>
+</beans>
