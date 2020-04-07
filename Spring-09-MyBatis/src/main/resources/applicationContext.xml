@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop
+       https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+   <!--这个配置文件，专注于注册bean-->
+
+    <import resource="spring-dao.xml"/>
+
+    <!--方式一-->
+    <bean id="userMapper" class="study.qi.mapper.UserMapperImpl">
+        <!--UserMapperImpl类需要传入一个sqlSession参数-->
+        <property name="sqlSession" ref="sqlSession"/>
+    </bean>
+
+    <!--方式二，不用使用sqlSession，通过继承，直接创建sqlSession，不需要sqlSession参数，但是继承的父类需要sqlSessionFactory参数-->
+    <bean id="userMapper2" class="study.qi.mapper.UserMapperImpl2">
+        <!--UserMapperImpl类需要传入一个sqlSession参数-->
+        <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+    </bean>
+
+</beans>

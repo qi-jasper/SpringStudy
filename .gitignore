@@ -1,0 +1,27 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+.idea/.gitignore
+.idea/compiler.xml
+.idea/misc.xml
+.idea/sonarlint/
+.idea/uiDesigner.xml
+.idea/vcs.xml
+!/.idea/
+
+/Spring-01-HelloSpring/target/
+/Spring-02-IoC/target/
+/Spring-03-DI/target/
+/Spring-04-Autowired/target/
+/Spring-05-Annotation/target/
+/Spring-06-JavaConfig/target/
+/Spring-07-Proxy/target/
+/Spring-08-AOP/target/
+/Spring-09-MyBatis/target/
+/Spring-10-Transaction/target/
